@@ -11,6 +11,14 @@ $sumbermeninggal = 'http://api.kawalcorona.com/meninggal';
 $dataMeninggal = file_get_contents($sumbermeninggal);
 $meninggal = json_decode($dataMeninggal, true);
 
+$sumberglobal = 'https://api.kawalcorona.com/';
+$dataGlobal = file_get_contents($sumberglobal);
+$global = json_decode($dataGlobal, true);
+$totalData = count($global);
+
+
+
+
 $sumberindonesia = 'http://api.kawalcorona.com/indonesia';
 $dataIndonesia = file_get_contents($sumberindonesia);
 $indonesia = json_decode($dataIndonesia, true);
@@ -21,8 +29,8 @@ $dataIndonesia = $indonesia[0];
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pantau Corona | Covid 19 - Informasi Terkini Perkembangan Covid 19 di Indonesia</title>
     <link rel="shortcut icon" href="<?= base_url(); ?>/assets/images/favicon.ico">
@@ -274,147 +282,26 @@ $dataIndonesia = $indonesia[0];
                             </th>
                             <th class="th-sm">Jenis Kasus
                             </th>
-                            <th class="th-sm">Kluster
+                            <th class="th-sm">Dirawat di
+                            </th>
+                            <th class="th-sm">Positif Sejak
                             </th>
                         </tr>
                     </thead>
                     <tbody>
+                    <?php $no=1; foreach ($total as $rows) { ?>
                         <tr>
-                            <td>1</td>
-                            <td>12</td>
-                            <td>L</td>
-                            <td>ID</td>
-                            <td>Sembuh</td>
-                            <td>Impor</td>
-                            <td>Jakarta</td>
+                            <td><?= $no++; ?></td>
+                            <td><?= $rows->Usia; ?></td>
+                            <td><?= $rows->JK; ?></td>
+                            <td><?= $rows->WN; ?></td>
+                            <td><?= $rows->Status; ?></td>
+                            <td><?= $rows->JenisKasus; ?></td>
+                            <td><?= $rows->DirawatDi; ?></td>
+                            <td><?= $rows->Positif; ?></td>
                         </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>12</td>
-                            <td>L</td>
-                            <td>ID</td>
-                            <td>Sembuh</td>
-                            <td>Impor</td>
-                            <td>Jakarta</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>12</td>
-                            <td>L</td>
-                            <td>ID</td>
-                            <td>Sembuh</td>
-                            <td>Impor</td>
-                            <td>Jakarta</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>12</td>
-                            <td>L</td>
-                            <td>ID</td>
-                            <td>Sembuh</td>
-                            <td>Impor</td>
-                            <td>Jakarta</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>12</td>
-                            <td>L</td>
-                            <td>ID</td>
-                            <td>Sembuh</td>
-                            <td>Impor</td>
-                            <td>Jakarta</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>12</td>
-                            <td>L</td>
-                            <td>ID</td>
-                            <td>Sembuh</td>
-                            <td>Impor</td>
-                            <td>Jakarta</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>12</td>
-                            <td>L</td>
-                            <td>ID</td>
-                            <td>Sembuh</td>
-                            <td>Impor</td>
-                            <td>Jakarta</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>12</td>
-                            <td>L</td>
-                            <td>ID</td>
-                            <td>Sembuh</td>
-                            <td>Impor</td>
-                            <td>Jakarta</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>12</td>
-                            <td>L</td>
-                            <td>ID</td>
-                            <td>Sembuh</td>
-                            <td>Impor</td>
-                            <td>Jakarta</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>12</td>
-                            <td>L</td>
-                            <td>ID</td>
-                            <td>Sembuh</td>
-                            <td>Impor</td>
-                            <td>Jakarta</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>12</td>
-                            <td>L</td>
-                            <td>ID</td>
-                            <td>Sembuh</td>
-                            <td>Impor</td>
-                            <td>Jakarta</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>12</td>
-                            <td>L</td>
-                            <td>ID</td>
-                            <td>Sembuh</td>
-                            <td>Impor</td>
-                            <td>Jakarta</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>12</td>
-                            <td>L</td>
-                            <td>ID</td>
-                            <td>Sembuh</td>
-                            <td>Impor</td>
-                            <td>Jakarta</td>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th>No
-                            </th>
-                            <th>Umur
-                            </th>
-                            <th>Gender
-                            </th>
-                            <th>WN
-                            </th>
-                            <th>Status
-                            </th>
-                            <th>Jenis Kasus
-                            </th>
-                            <th>Kluster
-                            </th>
-                        </tr>
-                    </tfoot>
+                    <?php } ?>
+                     
                 </table>
             </div>
             <!--- TABLE -->
@@ -437,64 +324,24 @@ $dataIndonesia = $indonesia[0];
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>China</td>
-                            <td>81.000</td>
-                            <td>67.000</td>
-                            <td>3,217</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Italia</td>
-                            <td>81.000</td>
-                            <td>67.000</td>
-                            <td>3,217</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>China</td>
-                            <td>81.000</td>
-                            <td>67.000</td>
-                            <td>3,217</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Italia</td>
-                            <td>81.000</td>
-                            <td>67.000</td>
-                            <td>3,217</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>China</td>
-                            <td>81.000</td>
-                            <td>67.000</td>
-                            <td>3,217</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Italia</td>
-                            <td>81.000</td>
-                            <td>67.000</td>
-                            <td>3,217</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>China</td>
-                            <td>81.000</td>
-                            <td>67.000</td>
-                            <td>3,217</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Italia</td>
-                            <td>81.000</td>
-                            <td>67.000</td>
-                            <td>3,217</td>
-                        </tr>
+                    
+                    <?php  for ($i=0; $i < $totalData ; $i++) { 
+                        $no=1; $index=0; foreach ($global[$i] as $row){ ?>
+                            <tr>
+                            <td><?= $no++; ?></td>
+                            <td><?= $row['Country_Region']; ?></td>
+                            <td><?= $row['Active']; ?></td>
+                            <td><?= $row['Recovered']; ?></td>
+                            <td><?= $row['Deaths']; ?></td>
+                            </tr>
+                        <?php } 
+                    }
+                    ?>
+                    
+                 
+                    
                     </tbody>
-                    <tfoot>
+                    <!-- <tfoot>
                         <tr>
                             <th>No
                             </th>
@@ -507,7 +354,7 @@ $dataIndonesia = $indonesia[0];
                             <th>Meninggal
                             </th>
                         </tr>
-                    </tfoot>
+                    </tfoot> -->
                 </table>
             </div>
             <!--- TABLE -->
@@ -521,7 +368,7 @@ $dataIndonesia = $indonesia[0];
                 <h2 class="font-weight-bold text-center dark-grey-text pb-2">Developers</h2>
                 <hr class="w-header my-4">
                 <!-- Section description -->
-                <p class="lead text-center text-muted pt-2 mb-5">Website ini kita buat dengan cinta oleh</p>
+                <p class="lead text-center text-muted pt-2 mb-5">Website ini kita buat dengan penuh dedikasi untuk seluruh masyarakat</p>
 
                 <!-- Grid row -->
                 <div class="row">
@@ -533,7 +380,7 @@ $dataIndonesia = $indonesia[0];
                             <img src="<?= base_url(); ?>/assets/images/idin.jpeg" class="z-depth-1 rounded-circle img-fluid" alt="smaple image" style="height:200px">
                         </div>
                         <h6 class="font-weight-bold">Khulafaur Rasyidin</h6>
-                        <small class="text-muted">Back-End Developer</small>
+                        <small class="text-muted">Chief Technology Officer<br>(Informatics Student at Telkom University)</small>
                         <ul class="list-unstyled d-flex justify-content-center mt-3 mb-0 red-text">
                             <li><a href="https://www.linkedin.com/in/khulafaur-rasyidin-82ba1816b/"><i class="fab fa-linkedin-in mx-2"></i></a></li>
                             <li><a href="https://www.instagram.com/kultusanmu/"><i class="fab fa-instagram mx-2"></a></i></li>
@@ -549,7 +396,7 @@ $dataIndonesia = $indonesia[0];
                             <img src="<?= base_url(); ?>/assets/images/adnan.jpeg" class="z-depth-1 rounded-circle img-fluid mx-auto" alt="smaple image" style="height:200px">
                         </div>
                         <h6 class="font-weight-bold">Adnan Imam Hidayat</h6>
-                        <small class="text-muted">Front-End Developer</small>
+                        <small class="text-muted">Front-End Developer<br>(Informatics Student at Telkom University)</small>
                         <ul class="list-unstyled d-flex justify-content-center mt-3 mb-0 red-text">
                             <li><a href="https://www.linkedin.com/in/adnanimamhidayat/"><i class="fab fa-linkedin-in mx-2"></i></a></li>
                             <li><a href="https://www.instagram.com/adnanimamhidayat/"><i class="fab fa-instagram mx-2"></i></a></li>
@@ -595,10 +442,13 @@ $dataIndonesia = $indonesia[0];
             </div>
 
             <!-- Copyright -->
-            <div class="footer-copyright text-center py-3">© 2020 Copyright:
-                <a href="https://mdbootstrap.com/"> MDBootstrap.com</a> Made By
+            <div class="footer-copyright text-center py-3">© 2020 Copyright
+                - Made By
                 <a href="https://www.linkedin.com/in/khulafaur-rasyidin-82ba1816b/"> Khulafaur Rasyidin</a> and
-                <a href="https://www.linkedin.com/in/adnanimamhidayat/"> Adnan Imam Hidayat</a>
+                <a href="https://www.linkedin.com/in/adnanimamhidayat/"> Adnan Imam Hidayat</a> Thanks to
+                <a href="https://hack.co.id/"> Ethical Hacker Indonesia </a>
+                <!--&-->
+                <!--<a href="https://kawalcovid19.id/"> KawalCovid19</a>-->
             </div>
             <!-- Copyright -->
 
@@ -651,14 +501,14 @@ $dataIndonesia = $indonesia[0];
             type: 'line',
             data: {
                 // -- ARRAY LABEL 
-                labels: ["2 Mar", "3 Mar", "4 Mar", "5 Mar", "6 Mar", "7 Mar", "8 Mar", "9 Mar", "10 Mar", "11 Mar", "12 Mar", "13 Mar"],
+                labels: ["2 Mar", "3 Mar", "4 Mar", "5 Mar", "6 Mar", "7 Mar", "8 Mar", "9 Mar", "10 Mar", "11 Mar", "12 Mar", "13 Mar", "14 Mar", "15 Mar", "16 Mar"],
                 datasets: [{
-                    label: "Statistik Kasus Korona Di Indonesia",
+                    label: "Total Positif",
                     fillColor: "#fff",
                     backgroundColor: 'rgba(255, 255, 255, .3)',
                     borderColor: 'rgba(255, 255, 255)',
                     //-- ARRAY DATA STATIKSIK
-                    data: [0, 10, 5, 2, 20, 30, 45, 34, 66, 33, 12, 100],
+                    data: [2, 2, 2, 2, 4, 4, 6, 19, 27, 34, 34, 69, 96, 117, 134],
                 }]
             },
             options: {
