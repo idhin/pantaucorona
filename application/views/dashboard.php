@@ -29,7 +29,19 @@ $dataIndonesia = $indonesia[0];
 <!DOCTYPE html>
 <html lang="en">
 
-<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-160822225-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-160822225-1');
+</script>
+
+    
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pantau Corona | Covid 19 - Informasi Terkini Perkembangan Covid 19 di Indonesia</title>
@@ -53,6 +65,8 @@ $dataIndonesia = $indonesia[0];
     <!-- DataTables.net  -->
     <link rel="stylesheet" type="text/css" href="stylesheet" href="<?= base_url(); ?>assets/main/css/addons/datatables.min.css">
     <link rel="stylesheet" href="stylesheet" href="<?= base_url(); ?>assets/main/css/addons/datatables-select.min.css">
+    
+    
 
 </head>
 
