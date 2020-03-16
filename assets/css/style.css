@@ -32,8 +32,8 @@
 body {
     font-family: 'Nunito', sans-serif;
     overflow-x: hidden;
-    color: #fbfbfb;
-    background: #2e3135;
+/*    color: #fbfbfb;*/
+/*    background: #2e3135;*/
 }
 
 h1,
@@ -172,9 +172,11 @@ button:focus {
     border: 1px solid #4d5052;
 }
 
+/*
 .h-100vh {
     height: 100vh;
 }
+*/
 
 .z-index {
     z-index: 2;
