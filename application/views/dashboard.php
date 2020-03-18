@@ -29,20 +29,25 @@ $dataIndonesia = $indonesia[0];
 <!DOCTYPE html>
 <html lang="en">
 
-<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-160822225-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160822225-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-160822225-1');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
 
-    
-    
-    
+        gtag('config', 'UA-160822225-1');
+
+    </script>
+
+
+
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pantau Corona | Covid 19 - Informasi Terkini Perkembangan Covid 19 di Indonesia</title>
     <link rel="shortcut icon" href="<?= base_url(); ?>/assets/images/favicon.ico">
@@ -65,8 +70,8 @@ $dataIndonesia = $indonesia[0];
     <!-- DataTables.net  -->
     <link rel="stylesheet" type="text/css" href="stylesheet" href="<?= base_url(); ?>assets/main/css/addons/datatables.min.css">
     <link rel="stylesheet" href="stylesheet" href="<?= base_url(); ?>assets/main/css/addons/datatables-select.min.css">
-    
-    
+
+
 
 </head>
 
@@ -91,6 +96,12 @@ $dataIndonesia = $indonesia[0];
                         <li class="nav-item">
                             <a class="nav-link" href="#hotline">Hotline Corona</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#hotline">Maps</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#hotline">Blog</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -110,6 +121,7 @@ $dataIndonesia = $indonesia[0];
                                 <h4 class="text-white first-title mb-4">PUSAT INFORMASI COVID19</h4>
                                 <!-- <h1 class="header-name text-white text-capitalize mb-0">I'M <span class="simple-text-rotate font-weight-bold">Kerri Deo.,A Graphic Designer.,A Photographer.</span></h1> -->
                                 <p class="text-white mx-auto header-desc mt-4">Data Corona Virus Global dan Indonesia.<br> (Live)</p>
+                                <a href="<?= base_url();?>Maps" type="button" class="btn btn-slack btn-md"><i class="fa fa-map left mr-1"></i> Peta Penyebaran Corona Per Provinsi</a>
                                 <div class="mt-4 pt-2">
                                     <!-- <a href="#services" class="btn btn-outline-custom btn-round">Download Cv</a> -->
                                 </div>
@@ -303,7 +315,7 @@ $dataIndonesia = $indonesia[0];
                         </tr>
                     </thead>
                     <tbody>
-                    <?php $no=1; foreach ($total as $rows) { ?>
+                        <?php $no=1; foreach ($total as $rows) { ?>
                         <tr>
                             <td><?= $no++; ?></td>
                             <td><?= $rows->Usia; ?></td>
@@ -314,8 +326,8 @@ $dataIndonesia = $indonesia[0];
                             <td><?= $rows->DirawatDi; ?></td>
                             <td><?= $rows->Positif; ?></td>
                         </tr>
-                    <?php } ?>
-                     
+                        <?php } ?>
+
                 </table>
             </div>
             <!--- TABLE -->
@@ -338,22 +350,22 @@ $dataIndonesia = $indonesia[0];
                         </tr>
                     </thead>
                     <tbody>
-                    
-                    <?php  $no=1; for ($i=0; $i < $totalData ; $i++) { 
+
+                        <?php  $no=1; for ($i=0; $i < $totalData ; $i++) { 
                          $index=0;  foreach ($global[$i] as $row){ ?>
-                            <tr>
+                        <tr>
                             <td><?= $no++; ?></td>
                             <td><?= $row['Country_Region']; ?></td>
                             <td><?= $row['Active']; ?></td>
                             <td><?= $row['Recovered']; ?></td>
                             <td><?= $row['Deaths']; ?></td>
-                            </tr>
+                        </tr>
                         <?php  } 
                     }
                     ?>
-                    
-                 
-                    
+
+
+
                     </tbody>
                     <!-- <tfoot>
                         <tr>
@@ -375,9 +387,54 @@ $dataIndonesia = $indonesia[0];
 
 
             <!--Section: Content-->
+            <section class="">
+                <h3 class="text-center font-weight-bold mb-5">Post Terbaru</h3>
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
+                        <div class="card hoverable">
+                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/58.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <a href="#!" class="black-text">We relocated to a new garage</a>
+                                <p class="card-title text-muted font-small mt-3 mb-2">Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title.</p>
+                                <button type="button" class="btn btn-flat text-primary p-0 mx-0">Selengkapnya<i class="fa fa-angle-right ml-2"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-md-0 mb-4">
+                        <div class="card hoverable">
+                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/project4.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <a href="#!" class="black-text">Top 5 content marketing strategies</a>
+                                <p class="card-title text-muted font-small mt-3 mb-2">Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title.</p>
+                                <button type="button" class="btn btn-flat text-primary p-0 mx-0">Selengkapnya<i class="fa fa-angle-right ml-2"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 mb-0">
+                        <div class="card hoverable">
+                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/88.jpg" alt="Card image cap">
+                            <div class="card-body">
+                                <a href="#!" class="black-text">Best practices for minimal design</a>
+                                <p class="card-title text-muted font-small mt-3 mb-2">Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title.</p>
+                                <button type="button" class="btn btn-flat text-primary p-0 mx-0">Selengkapnya<i class="fa fa-angle-right ml-2"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mb-5 mt-1">
+                    <a href="#!">Tampilkan Semua Postingan</a>
+                </div>
+            </section>
+            <!--Section: Content-->
+
+
+
+            <!--Section: Content-->
             <section class="team-section text-center dark-grey-text mb-3" id="developers">
 
-                <h6 class="font-weight-bold text-center grey-text text-uppercase small mb-4">Team</h6>
+                <h6 class="font-weight-bold text-center grey-text text-uppercase small mb-0">Team</h6>
                 <!-- Section heading -->
                 <h2 class="font-weight-bold text-center dark-grey-text pb-2">Developers</h2>
                 <hr class="w-header my-4">
