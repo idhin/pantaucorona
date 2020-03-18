@@ -29,7 +29,7 @@ $dataIndonesia = $indonesia[0];
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160822225-1"></script>
 <script>
@@ -41,7 +41,7 @@ $dataIndonesia = $indonesia[0];
 </script>
 
     
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
     
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pantau Corona | Covid 19 - Informasi Terkini Perkembangan Covid 19 di Indonesia</title>
@@ -339,8 +339,8 @@ $dataIndonesia = $indonesia[0];
                     </thead>
                     <tbody>
                     
-                    <?php  for ($i=0; $i < $totalData ; $i++) { 
-                        $no=1; $index=0; foreach ($global[$i] as $row){ ?>
+                    <?php  $no=1; for ($i=0; $i < $totalData ; $i++) { 
+                         $index=0;  foreach ($global[$i] as $row){ ?>
                             <tr>
                             <td><?= $no++; ?></td>
                             <td><?= $row['Country_Region']; ?></td>
@@ -348,7 +348,7 @@ $dataIndonesia = $indonesia[0];
                             <td><?= $row['Recovered']; ?></td>
                             <td><?= $row['Deaths']; ?></td>
                             </tr>
-                        <?php } 
+                        <?php  } 
                     }
                     ?>
                     
@@ -515,14 +515,14 @@ $dataIndonesia = $indonesia[0];
             type: 'line',
             data: {
                 // -- ARRAY LABEL 
-                labels: ["2 Mar", "3 Mar", "4 Mar", "5 Mar", "6 Mar", "7 Mar", "8 Mar", "9 Mar", "10 Mar", "11 Mar", "12 Mar", "13 Mar", "14 Mar", "15 Mar", "16 Mar"],
+                labels: ["2 Mar", "3 Mar", "4 Mar", "5 Mar", "6 Mar", "7 Mar", "8 Mar", "9 Mar", "10 Mar", "11 Mar", "12 Mar", "13 Mar", "14 Mar", "15 Mar", "16 Mar", "17 Mar", "18 Mar"],
                 datasets: [{
                     label: "Total Positif",
                     fillColor: "#fff",
                     backgroundColor: 'rgba(255, 255, 255, .3)',
                     borderColor: 'rgba(255, 255, 255)',
                     //-- ARRAY DATA STATIKSIK
-                    data: [2, 2, 2, 2, 4, 4, 6, 19, 27, 34, 34, 69, 96, 117, 134],
+                    data: [2, 2, 2, 2, 4, 4, 6, 19, 27, 34, 34, 69, 96, 117, 134, 172, 227],
                 }]
             },
             options: {
