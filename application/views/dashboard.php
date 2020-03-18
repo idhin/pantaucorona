@@ -29,24 +29,20 @@ $dataIndonesia = $indonesia[0];
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160822225-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-160822225-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-        function gtag() {
-            dataLayer.push(arguments);
-        }
-        gtag('js', new Date());
+  gtag('config', 'UA-160822225-1');
+</script>
 
-        gtag('config', 'UA-160822225-1');
-
-    </script>
-
-
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
+    
+    
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Pantau Corona | Covid 19 - Informasi Terkini Perkembangan Covid 19 di Indonesia</title>
     <link rel="shortcut icon" href="<?= base_url(); ?>/assets/images/favicon.ico">
@@ -69,8 +65,8 @@ $dataIndonesia = $indonesia[0];
     <!-- DataTables.net  -->
     <link rel="stylesheet" type="text/css" href="stylesheet" href="<?= base_url(); ?>assets/main/css/addons/datatables.min.css">
     <link rel="stylesheet" href="stylesheet" href="<?= base_url(); ?>assets/main/css/addons/datatables-select.min.css">
-
-
+    
+    
 
 </head>
 
@@ -307,7 +303,7 @@ $dataIndonesia = $indonesia[0];
                         </tr>
                     </thead>
                     <tbody>
-                        <?php $no=1; foreach ($total as $rows) { ?>
+                    <?php $no=1; foreach ($total as $rows) { ?>
                         <tr>
                             <td><?= $no++; ?></td>
                             <td><?= $rows->Usia; ?></td>
@@ -318,8 +314,8 @@ $dataIndonesia = $indonesia[0];
                             <td><?= $rows->DirawatDi; ?></td>
                             <td><?= $rows->Positif; ?></td>
                         </tr>
-                        <?php } ?>
-
+                    <?php } ?>
+                     
                 </table>
             </div>
             <!--- TABLE -->
@@ -342,22 +338,22 @@ $dataIndonesia = $indonesia[0];
                         </tr>
                     </thead>
                     <tbody>
-
-                        <?php  for ($i=0; $i < $totalData ; $i++) { 
-                        $no=1; $index=0; foreach ($global[$i] as $row){ ?>
-                        <tr>
+                    
+                    <?php  $no=1; for ($i=0; $i < $totalData ; $i++) { 
+                         $index=0;  foreach ($global[$i] as $row){ ?>
+                            <tr>
                             <td><?= $no++; ?></td>
                             <td><?= $row['Country_Region']; ?></td>
                             <td><?= $row['Active']; ?></td>
                             <td><?= $row['Recovered']; ?></td>
                             <td><?= $row['Deaths']; ?></td>
-                        </tr>
-                        <?php } 
+                            </tr>
+                        <?php  } 
                     }
                     ?>
-
-
-
+                    
+                 
+                    
                     </tbody>
                     <!-- <tfoot>
                         <tr>
@@ -377,47 +373,6 @@ $dataIndonesia = $indonesia[0];
             </div>
             <!--- TABLE -->
 
-            <!--Section: BLOG-->
-            <section class="">
-                <h3 class="text-center font-weight-bold mb-5">Latest news</h3>
-                <div class="row">
-                    <div class="col-lg-4 col-md-12 mb-lg-0 mb-4">
-                        <div class="card hoverable">
-                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/58.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <a href="#!" class="black-text">We relocated to a new garage</a>
-                                <p class="card-title text-muted font-small mt-3 mb-2">Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title.</p>
-                                <button type="button" class="btn btn-flat text-primary p-0 mx-0">Read more<i class="fa fa-angle-right ml-2"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mb-md-0 mb-4">
-                        <div class="card hoverable">
-                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/project4.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <a href="#!" class="black-text">Top 5 content marketing strategies</a>
-                                <p class="card-title text-muted font-small mt-3 mb-2">Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title.</p>
-                                <button type="button" class="btn btn-flat text-primary p-0 mx-0">Read more<i class="fa fa-angle-right ml-2"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mb-0">
-                        <div class="card hoverable">
-                            <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Others/images/88.jpg" alt="Card image cap">
-                            <div class="card-body">
-                                <a href="#!" class="black-text">Best practices for minimal design</a>
-                                <p class="card-title text-muted font-small mt-3 mb-2">Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title.</p>
-                                <button type="button" class="btn btn-flat text-primary p-0 mx-0">Read more<i class="fa fa-angle-right ml-2"></i></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center mt-5">
-                    <a href="#!">Browse all blog posts</a>
-                </div>
-
-            </section>
-            <!--Section: BLOG-->
 
             <!--Section: Content-->
             <section class="team-section text-center dark-grey-text mb-3" id="developers">
@@ -560,14 +515,14 @@ $dataIndonesia = $indonesia[0];
             type: 'line',
             data: {
                 // -- ARRAY LABEL 
-                labels: ["2 Mar", "3 Mar", "4 Mar", "5 Mar", "6 Mar", "7 Mar", "8 Mar", "9 Mar", "10 Mar", "11 Mar", "12 Mar", "13 Mar", "14 Mar", "15 Mar", "16 Mar"],
+                labels: ["2 Mar", "3 Mar", "4 Mar", "5 Mar", "6 Mar", "7 Mar", "8 Mar", "9 Mar", "10 Mar", "11 Mar", "12 Mar", "13 Mar", "14 Mar", "15 Mar", "16 Mar", "17 Mar", "18 Mar"],
                 datasets: [{
                     label: "Total Positif",
                     fillColor: "#fff",
                     backgroundColor: 'rgba(255, 255, 255, .3)',
                     borderColor: 'rgba(255, 255, 255)',
                     //-- ARRAY DATA STATIKSIK
-                    data: [2, 2, 2, 2, 4, 4, 6, 19, 27, 34, 34, 69, 96, 117, 134],
+                    data: [2, 2, 2, 2, 4, 4, 6, 19, 27, 34, 34, 69, 96, 117, 134, 172, 227],
                 }]
             },
             options: {
